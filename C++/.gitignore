@@ -1,0 +1,89 @@
+# ملفات الكومبايلر الناتجة
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+*.a
+*.lib
+
+# ملفات التجميع (build artifacts)
+build/
+bin/
+dist/
+Debug/
+Release/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# ملفات الكاش
+.cache/
+*.pch
+*.ilk
+*.idb
+
+# ملفات بيئات التطوير (IDE)
+.vscode/
+.idea/
+*.suo
+*.user
+*.userossc
+*.opensdf
+*.sdf
+*.sln
+*.filters
+
+# ملفات إعداد المشاريع
+*.vcxproj*
+*.code-workspace
+
+# ملفات الاختبارات المؤقتة
+*.swp
+*~
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+
+# ملفات مكتبات خارجية
+vendor/
+third_party/
+
+# ملفات البيئة الافتراضية (إذا كنت تستخدم conan أو vcpkg)
+.conan/
+vcpkg_installed/
+
+# ملفات التكوين السرية
+.env
+
+# ملفات CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# مجلدات بيئات العمل والمترجمات
+build/
+Debug/
+Release/
+x64/
+x86/
+*.log
+*.tmp
+*.swp
+*.swo
+*.stackdump
+
+# ملفات Clang و GCC
+*.d
+*.gcda
+*.gcno
+*.gcov
+
+# ملفات GDB (تصحيح الأخطاء)
+.gdb_history
+.gdbinit

@@ -1,71 +1,3 @@
-#---------------------(General Tree)---------------------#
-
-class Tree:
-    def __init__(self, data):
-        self.data = data 
-        self.children = []
-        self.parent = None 
-
-    def add_child(self, data):
-        child = Tree(data)
-        child.parent = self
-        self.children.append(child)
-
-    def print_tree(self):
-        prefix = self.level()*"  " + "|__" 
-        print(prefix+self.data) if self.parent else print(self.data)
-        for node in self.children :
-            if node.data :
-                node.print_tree()
-        return ...
-
-    def level(self):
-        result = 0
-        while self.parent != None :
-            result += 1
-            self = self.parent
-        return result
-
-root = Tree("Elctronic")
-root.add_child("Laptop")
-root.add_child("phone")
-root.add_child("Tv")
-root.children[0].add_child("Lenovo")
-root.children[0].add_child("Asus")
-root.children[0].add_child("msi")
-root.print_tree()
-
-#---------------------(Binary Tree)---------------------#
-
-class BinaryTree :
-    def __init__(self,data):
-        self.data=data
-        self.left=None
-        self.right=None
-
-root=BinaryTree("A")
-
-node1_1=BinaryTree("B")
-node1_2=BinaryTree("C")
-
-node2_1=BinaryTree("D")
-node2_2=BinaryTree("E")
-node2_3=BinaryTree("F")
-node2_4=BinaryTree("G")
-
-
-root.left=node1_1
-root.right=node1_2
-
-node1_1.left=node2_1
-node1_1.right=node2_2
-
-node1_2.left=node2_3
-node1_2.right=node2_4
-
-# print(root.left.left.data) # test A --> B --> D
-
-
 # ---------------------(Binary Search Tree)---------------------#
 
 mytree = """        5
@@ -222,4 +154,3 @@ def build_BinaryTree(lis:list): # implement Binary_Tree From List of element
 #     print(mybt.pre_order_traversal())
 #     mybt.delete(10)
 #     print(mybt.pre_order_traversal())
-

@@ -1,46 +1,36 @@
-# Implementation of Dict
-
-def get_hash(key):
-    h=0
-    for char in key :
-        h+=ord(char)  # h += ASCII value of char 
-    return h % 100 # make Hash of Value(key) in Hash map
-
-print(get_hash("Abdalrhman"))
 
 class HashTable:
+    """Implementation of the Hash Table"""
     def __init__(self):
         self.MAX = 100
-        self.arr = [ [] for i in range(self.MAX)]
+        self.arr = [ [] for i in range(self.MAX)] # its represent the memory
 
-    def get_hash(self,key):
-        h=0
+    def get_hash(self, key):
+        h = 0
         for char in key :
-            h+=ord(char)  # h += ASCII value of char 
+            h += ord(char)  # h += ASCII value of char
         return h % self.MAX # make Hash of Value(key) in Hash map
 
-    def __setitem__(self,key,val):
-        self.arr[self.get_hash(key)]=val
+    def __setitem__(self, key, val): # object[name_key] = value
+        self.arr[self.get_hash(key)] = val
 
-    def __getitem__(self,key):
+    def __getitem__(self, key): # to get value of dictionary by use name of key
         return self.arr[self.get_hash(key)]
 
-    def __delitem__(self,key):
-        self.arr[self.get_hash(key)]=None
+    def __delitem__(self, key): # to use del
+        self.arr[self.get_hash(key)] = []
 
-t=HashTable()
+myDictionary = HashTable()
 
-print(t.get_hash("Abdalrhman"))
+print(myDictionary.get_hash("Abdalrhman")) # return 2
 
-t["Abdalrhman"]="10th 0f ramadan" # it was like that -->  t.add("Abdalrhman","10th 0f ramadan")
+# will add the the value at the index 2 according to the hash value
+myDictionary["Abdalrhman"] = "10th 0f ramadan"
 
-print(t.arr)
+print(myDictionary.arr)
 
-print(t["Abdalrhman"]) # it was like that --> t.get("Abdalrhman")
+print(f"The value of the key: {myDictionary['Abdalrhman']}")
 
-del t["Abdalrhman"]
+del myDictionary["Abdalrhman"]
 
-print(t.arr)
-
-print(ord("a"))
-
+# print(myDictionary.arr)

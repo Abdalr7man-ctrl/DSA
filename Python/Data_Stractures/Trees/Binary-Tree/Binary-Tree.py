@@ -1,56 +1,8 @@
-# Resources: https://www.w3schools.com/dsa/dsa_data_binarytrees.php
 # Resources: https://youtu.be/4r_XR9fUPhQ?si=PBsRjix_Z9kVHgMM
 
 # # Resources for tree :
 # https://www.geeksforgeeks.org/tree-data-structure/
 # https://www.geeksforgeeks.org/introduction-to-tree-data-structure/
-
-#---------------------(General Tree)---------------------#
-
-class Tree:
-    def __init__(self, data):
-        self.data = data 
-        self.children = []
-        self.parent = None 
-
-    def add_child(self, data):
-        child = Tree(data)
-        child.parent = self
-        self.children.append(child)
-
-    def print_tree(self):
-        prefix = self.level()*"  " + "|__" 
-        print(prefix+self.data) if self.parent else print(self.data)
-        for node in self.children :
-            if node.data :
-                node.print_tree()
-        return ...
-
-    def level(self):
-        result = 0
-        while self.parent != None :
-            result += 1
-            self = self.parent
-        return result
-
-root = Tree("Elctronic")
-root.add_child("Laptop")
-root.add_child("phone")
-root.add_child("Tv")
-
-root.children[0].add_child("Lenovo")
-root.children[0].add_child("Asus")
-root.children[0].add_child("msi")
-
-root.children[1].add_child("Samasung")
-root.children[1].children[0].add_child("S10")
-root.children[1].children[0].add_child("M52")
-
-root.children[1].add_child("Iphone")
-
-# root.print_tree()
-
-#---------------------(Binary Tree)---------------------#
 
 class BinaryTree :
     def __init__(self, data):

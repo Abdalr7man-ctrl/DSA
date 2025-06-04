@@ -1,20 +1,5 @@
 # ---------------------(Binary Search Tree)---------------------#
 
-mytree = """        5
-                    / \
-                    0   10
-                    /      \
-                -5       45
-                /        /
-                -10      15
-                        \
-                        20
-                            \  
-                            30   
-                            /
-                        25  
-"""
-
 class Bst :
     def __init__(self, data):
         self.data = data
@@ -68,7 +53,7 @@ class Bst :
 
     def search(self, val):
         if self.data == val :
-            return self.data
+            return True
         elif val > self.data :
             if self.right :
                 return self.right.search(val)
@@ -98,7 +83,7 @@ class Bst :
             total += self.right.calculate_sum()
         return total
 
-    def delete(self, val) :
+    def delete(self, val) : # TODO: Fix Bug delet elemnt not in the tree (https://youtu.be/aydX3efdtTg?si=RuLtDkw7dPtVzzsY)
         if val > self.data :
             if self.right != None :
                 self.right = self.right.delete(val)
@@ -127,30 +112,44 @@ def build_BinaryTree(lis:list): # implement Binary_Tree From List of element
         mytree.add_child(i)
     return mytree
 
+my_tree = """        5
+                    / \
+                    0   10
+                    /      \
+                -5       45
+                /        /
+                -10      15
+                        \
+                        20
+                            \  
+                            30   
+                            /
+                        25  
+"""
 
+if __name__ == "__main__" :
 
-# if __name__ == "__main__" :
-#     x=[5,0,-5,-10,10,10,10,45,15,20,30,25]
-#     mybt=build_BinaryTree(x)
+    my_arr = [5, 0, -5, -10, 10, 10, 10, 45, 15, 20, 30, 25]
+    my_tree = build_BinaryTree(my_arr)
     
-#     print(x) # ترتيب النود حسب المدخل أولا
-#     print(mybt.in_order()) # Travels DFS (in-order) Type
-#     print("#" * 50)
+    print(f"My arr: {my_arr}") # ترتيب النود حسب المدخل أولا
+    print(f"My Tree in order Travels: {my_tree.in_order()}\n") # Traversal DFS (in-order) Type
 
-#     print(mybt.search(10)) 
-#     print(mybt.search(-20))
-#     print(mybt.data)
-#     print("#" * 50)
+    print(f"Search about Existing element: {my_tree.search(10)}")
+    print(f"Search about not Existing element: {my_tree.search(-20)}\n")
 
-#     print(mybt.calculate_sum())
-#     print("#" * 50)
+    print(f"The sum of elements in the tree: {my_tree.calculate_sum()}\n")
 
-#     print(mybt.right.right.left.find_max())
-#     print(mybt.find_min())
-#     print("#" * 50)
+    print(f"The maximum value: {my_tree.find_max()}")
+    print(f"The minimum value: {my_tree.find_min()}\n")
 
-#     print(mybt.in_order())
-#     print(mybt.post_order_traversal()) 
-#     print(mybt.pre_order_traversal())
-#     mybt.delete(10)
-#     print(mybt.pre_order_traversal())
+    print(f"In order Traversal: {my_tree.in_order()}")
+    print(f"Post order Traversal: {my_tree.post_order_traversal()}") 
+    print(f"Pre order Traversal: {my_tree.pre_order_traversal()}\n")
+
+    my_tree.delete(10)
+    my_tree.delete(10)
+    my_tree.delete(10)
+    my_tree.delete(10)
+    my_tree.delete(10)
+    print(my_tree.pre_order_traversal()) # ?????

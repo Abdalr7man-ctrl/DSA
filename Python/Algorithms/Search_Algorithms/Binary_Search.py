@@ -4,9 +4,8 @@ The time complexity is : Big O(log(n))
 its work on sorted array
 """
 
-
 def Binary_Search(arr:list, target) -> int:
-    
+
     middle = len(arr) // 2
     left = 0
     right = len(arr)
